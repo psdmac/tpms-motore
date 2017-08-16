@@ -1,0 +1,11 @@
+.image_frame .image_wrapper {
+    opacity: 0.8;
+}
+
+
+
+.icon_box .image_wrapper i {
+    font-size: 60px;
+    line-height: 110px;
+    color: #000;
+}
