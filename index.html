@@ -471,7 +471,7 @@
                             <div class="section_wrapper mcb-section-inner">
                                 <div class="wrap mcb-wrap one clearfix">
                                     <div class="column mcb-column three-fourth column_column">
-                                        <div class="column_attr align_center">
+                                        <div class="column_attr align_center links">
                                             <h3 style="color: #fff; margin-top: 9px;">六輪款 建議售價 $12,000 <a href="https://p.ecpay.com.tw/gU1JZ" target="_blank" style="color: #F00; display: inline-block; margin-left: 5px; font-weight: 700;">線上自助價  $9,600(購買)</a></h3>
                                             <h3 style="color: #fff; margin-top: 9px;">八輪款 建議售價 $14,000 <a href="https://p.ecpay.com.tw/FmHZr" target="_blank" style="color: #F00; display: inline-block; margin-left: 5px; font-weight: 700;">線上自助價 $11,200(購買)</a></h3>
                                             <h3 style="color: #fff; margin-top: 9px;">十輪款 建議售價 $16,000 <a href="https://p.ecpay.com.tw/i367D" target="_blank" style="color: #F00; display: inline-block; margin-left: 5px; font-weight: 700;">線上自助價 $12,800(購買)</a></h3>
@@ -521,23 +521,25 @@
     <script src="js/scripts.js"></script>
 
     <script>
-        jQuery(window).load(function() {
-            var retina = window.devicePixelRatio > 1 ? true : false;
-            if (retina) {
-                var retinaEl = jQuery("#logo img.logo-main");
-                var retinaLogoW = retinaEl.width();
-                var retinaLogoH = retinaEl.height();
-                retinaEl.attr("src", "content/notebook/images/retina-notebook.png").width(retinaLogoW).height(retinaLogoH);
-                var stickyEl = jQuery("#logo img.logo-sticky");
-                var stickyLogoW = stickyEl.width();
-                var stickyLogoH = stickyEl.height();
-                stickyEl.attr("src", "content/notebook/images/retina-notebook.png").width(stickyLogoW).height(stickyLogoH);
-                var mobileEl = jQuery("#logo img.logo-mobile");
-                var mobileLogoW = mobileEl.width();
-                var mobileLogoH = mobileEl.height();
-                mobileEl.attr("src", "content/notebook/images/retina-notebook.png").width(mobileLogoW).height(mobileLogoH);
-            }
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-65954443-2', 'auto');
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+            $('.links a').on('click', function() {
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: '購買',
+                    eventAction: '連結',
+                    eventLabel: $(this).text()
+                });
+            });
         });
+
     </script>
 
 </body>
